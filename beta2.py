@@ -147,6 +147,7 @@ class People(Resource):
 					"eligibility":row['eligibility'],"has_expanded_access":row['has_expanded_access']
 					,"enrollment":row['enrollment']}
 					return data
+					
 			return s
 					
 		

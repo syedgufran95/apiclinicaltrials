@@ -78,23 +78,43 @@ def append1():
 			s="Already Present"
 			return s
 
-@app.route('/parse')
+@app.route('/parse',methods=['GET'])
 def parse1():
-	with open('combined2.csv',encoding='utf-8') as csvf:
-		csvreader=csv.DictReader(csvf)
-		count=0
-		for index,row in enumerate(csvreader):
-			count=count+1
-			id1=row["nct_id"]
-			if(index==0):
-				data={}
-				data[id1]={}
-			data[id1]={"overall_status":row['overall_status'],
-			"start_date":row['start_date'],"completion_date":row['completion_date'],
-			"condition":row['condition'],"Study design info":row['Study design info'],
-			"eligibility":row['eligibility'],"has_expanded_access":row['has_expanded_access']
-			,"enrollment":row['enrollment']}
 	
+	if request.args:
+		s=request.args.to_dict()
+		l1=[]
+		for x in s.values():
+			l1.append(x)
+
+		with open('combined2.csv',encoding='utf-8') as csvf:
+			csvreader=csv.DictReader(csvf)
+			#temp=l1[0]
+			data={}
+			count=0
+			leng=len(l1)
+			
+
+			data={}
+			for index,row in enumerate(csvreader):
+				data.setdefault(row["nct_id"],{})
+
+				for x in l1:
+					data[row["nct_id"]].update({x:row[x]})
+	else:
+		with open('combined2.csv',encoding='utf-8') as csvf:
+			csvreader=csv.DictReader(csvf)			
+			data={}
+			for index,row in enumerate(csvreader):
+				
+				id1=row["nct_id"]
+				data[id1]={}
+				data[id1]={"overall_status":row['overall_status'],
+					"start_date":row['start_date'],"completion_date":row['completion_date'],
+					"condition":row['condition'],"Study design info":row['Study design info'],
+					"eligibility":row['eligibility'],"has_expanded_access":row['has_expanded_access']
+					,"enrollment":row['enrollment']}
+			
 	return data
 
 @app.route('/find/<string:nct_idu>')
@@ -116,7 +136,6 @@ def find0(nct_idu):
 					return data
 					
 			return s 
-
 
 def find1(nct_idu):
 		s="not found"
