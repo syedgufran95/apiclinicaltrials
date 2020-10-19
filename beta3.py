@@ -97,6 +97,25 @@ def parse1():
 	
 	return data
 
+@app.route('/find/<string:nct_idu>')
+def find0(nct_idu):
+		s="not found"
+		with open('combined2.csv',encoding='utf-8') as csvf:
+			csvreader=csv.DictReader(csvf)
+			for index,row in enumerate(csvreader):
+				if row["nct_id"]==nct_idu:
+					id1=row["nct_id"]
+					s="found"
+					data={}
+					data[id1]={}
+					data[id1]={"overall_status":row['overall_status'],
+					"start_date":row['start_date'],"completion_date":row['completion_date'],
+					"condition":row['condition'],"Study design info":row['Study design info'],
+					"eligibility":row['eligibility'],"has_expanded_access":row['has_expanded_access']
+					,"enrollment":row['enrollment']}
+					return data
+					
+			return s 
 
 
 def find1(nct_idu):
