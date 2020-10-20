@@ -1,0 +1,42 @@
+[33mcommit 9f8009a69666f9d4a39b6187423306d41e813fef[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: machine <syedgufran95@gmail.com>
+Date:   Tue Oct 20 10:14:03 2020 +0530
+
+    readme added
+
+[33mcommit 9b65eb5441f52cd300dab4315cde51731603d022[m
+Author: machine <syedgufran95@gmail.com>
+Date:   Tue Oct 20 02:19:15 2020 +0530
+
+    selected and all fields parsing
+
+[33mcommit 8a4b0472012e61e3df6f332f8c384ffab92fbf19[m
+Author: machine <syedgufran95@gmail.com>
+Date:   Mon Oct 19 21:34:28 2020 +0530
+
+    added find nct which return details
+
+[33mcommit 6cbcfc6d8d2ef803acb6e88ca40379e480057aac[m
+Merge: a410c8b fefb0e5
+Author: machine <syedgufran95@gmail.com>
+Date:   Mon Oct 19 20:37:22 2020 +0530
+
+    beta3 added
+
+[33mcommit a410c8becb450753a6ac23f754df489e0319cecc[m
+Author: machine <syedgufran95@gmail.com>
+Date:   Mon Oct 19 20:30:41 2020 +0530
+
+    modular code more redable
+
+[33mcommit fefb0e5ae5610e9d4af3e87c0aa5577ec3ae509d[m
+Author: syedgufran95 <43085010+syedgufran95@users.noreply.github.com>
+Date:   Sun Oct 18 22:43:54 2020 +0530
+
+    Delete combined2.csv
+
+[33mcommit 383bb718a708a437d32a329e5292d6a0a4c4ae1b[m
+Author: machine <syedgufran95@gmail.com>
+Date:   Sun Oct 18 22:38:22 2020 +0530
+
+    first commit
